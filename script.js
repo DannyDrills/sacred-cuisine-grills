@@ -4,6 +4,15 @@
 
 'use strict';
 
+
+/* ============================================================
+   SUPABASE CONFIG — paste your real keys here
+   ============================================================ */
+const SUPABASE_URL  = 'YOUR_SUPABASE_URL';
+const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+const _supabase = (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_URL')
+  ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON)
+  : null;
 const WA_NUMBER = '2349164059883';
 const WA_MESSAGE = encodeURIComponent("Hello Sacred Cuisine & Grills, I'd like to place an order...");
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
@@ -327,6 +336,120 @@ function closeNav() {
 }
 
 /* ============================================================
+   ORDER MODAL
+   ============================================================ */
+function openOrderModal(e) {
+  if (e) e.preventDefault();
+  const overlay = document.getElementById('orderModalOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Pre-fill items if called from a menu card context
+  if (window._pendingItem) {
+    document.getElementById('orderItems').value = window._pendingItem;
+    window._pendingItem = null;
+  }
+}
+
+function closeOrderModal() {
+  document.getElementById('orderModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function handleOrderSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('orderSubmitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const name = document.getElementById('orderName').value.trim();
+  const phone = document.getElementById('orderPhone').value.trim();
+  const email = document.getElementById('orderEmail').value.trim();
+  const area = document.getElementById('orderArea').value;
+  const payment = document.getElementById('orderPayment').value;
+  const items = document.getElementById('orderItems').value.trim();
+  const instructions = document.getElementById('orderInstructions').value.trim();
+  const referral = document.getElementById('orderReferral').value;
+
+  // Validate required fields
+  if (!name || !phone || !area || !payment || !items) {
+    btn.textContent = 'Please fill all required fields';
+    btn.style.background = '#c0392b';
+    setTimeout(() => {
+      btn.textContent = 'Confirm & Order on WhatsApp';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 2500);
+    return;
+  }
+
+  // Save to Supabase
+  if (_supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+    await _supabase.from('orders').insert([{
+      customer_name: name,
+      phone,
+      email: email || null,
+      delivery_area: area,
+      items_ordered: items,
+      payment_method: payment,
+      special_instructions: instructions || null,
+      referral_source: referral || null,
+      status: 'pending'
+    }]);
+  }
+
+  // Build WhatsApp message with all details
+  const waMsg = encodeURIComponent(
+    `Hello Sacred Cuisine & Grills! 🔥
+
+New Order:
+👤 Name: ${name}
+📞 Phone: ${phone}
+📍 Area: ${area}
+🛒 Items: ${items}
+💳 Payment: ${payment}${instructions ? `
+ℹ️ Notes: ${instructions}` : ''}
+
+Please confirm my order and delivery time. Thank you!`
+  );
+
+  closeOrderModal();
+  e.target.reset();
+  btn.textContent = 'Confirm & Order on WhatsApp';
+  btn.disabled = false;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${waMsg}`, '_blank', 'noopener');
+}
+
+function initOrderModal() {
+  document.getElementById('orderForm').addEventListener('submit', handleOrderSubmit);
+  document.getElementById('orderModalClose').addEventListener('click', closeOrderModal);
+  document.getElementById('orderModalOverlay').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeOrderModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOrderModal();
+  });
+}
+
+/* ============================================================
+   VISITOR TRACKING
+   ============================================================ */
+async function logVisit() {
+  if (!_supabase || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+  const sessionKey = 'scg_session';
+  let sessionId = sessionStorage.getItem(sessionKey);
+  if (!sessionId) {
+    sessionId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+    sessionStorage.setItem(sessionKey, sessionId);
+    await _supabase.from('page_visitors').insert([{
+      referrer: document.referrer || 'Direct',
+      device: window.innerWidth < 768 ? 'Mobile' : 'Desktop',
+      page_session: sessionId
+    }]);
+  }
+}
+
+/* ============================================================
    FOOTER YEAR
    ============================================================ */
 function setYear() {
@@ -358,6 +481,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initScrollReveal();
   initCounter();
+  initOrderModal();
+  logVisit();
 
   // Smooth scroll for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {

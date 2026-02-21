@@ -1,0 +1,434 @@
+/* ============================================================
+   SACRED CUISINE ADMIN DASHBOARD — admin.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #111;
+    --dark: #1a1a1a;
+    --card: #1e1e1e;
+    --orange: #FF6B00;
+    --red: #C0392B;
+    --white: #fff;
+    --gray: #888;
+    --light-gray: #ccc;
+    --border: rgba(255, 255, 255, 0.07);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* ======= LOGIN ======= */
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 60% 40%, rgba(255, 107, 0, 0.12) 0%, transparent 60%),
+        var(--black);
+    padding: 1rem;
+}
+
+.login-card {
+    background: var(--dark);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.login-card h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+.login-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+}
+
+.login-field {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.login-field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.login-field input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-field input:focus {
+    border-color: var(--orange);
+}
+
+.login-error {
+    background: rgba(192, 57, 43, 0.2);
+    border: 1px solid rgba(192, 57, 43, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--orange), var(--red));
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ======= DASHBOARD ======= */
+.dashboard {
+    min-height: 100vh;
+}
+
+.dash-header {
+    background: rgba(17, 17, 17, 0.97);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.dash-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dash-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.dash-logo span {
+    color: var(--orange);
+}
+
+.dash-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-email {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.logout-btn {
+    padding: 8px 18px;
+    background: rgba(255, 107, 0, 0.15);
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    border-radius: 6px;
+    color: var(--orange);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 107, 0, 0.3);
+}
+
+.dash-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Stats Row */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.stat-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.stat-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card-value {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.2rem;
+    color: var(--orange);
+    line-height: 1;
+}
+
+.stat-card-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* Charts */
+.charts-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.chart-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.chart-card h3 {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--light-gray);
+}
+
+.bar-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--orange), var(--red));
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+/* Orders Table */
+.orders-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.orders-header h3 {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    font-weight: 600;
+}
+
+.orders-filter select {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+thead th {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.72rem;
+    padding: 10px 14px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+tbody tr {
+    border-top: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+tbody td {
+    padding: 12px 14px;
+    color: var(--light-gray);
+    vertical-align: top;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+}
+
+.status-confirmed {
+    background: rgba(255, 107, 0, 0.15);
+    color: var(--orange);
+}
+
+.status-delivered {
+    background: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+}
+
+.status-cancelled {
+    background: rgba(192, 57, 43, 0.15);
+    color: var(--red);
+}
+
+.status-select {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .dash-main {
+        padding: 1rem;
+    }
+
+    .stat-card-value {
+        font-size: 1.8rem;
+    }
+
+    .orders-header {
+        padding: 1rem;
+    }
+
+    thead th,
+    tbody td {
+        padding: 8px 10px;
+    }
+}
