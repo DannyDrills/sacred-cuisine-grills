@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sacred Cuisine & Grills | BBQ & Local Food Delivery in Lagos</title>
+  <meta name="description" content="Order fresh BBQ fish, chicken, shawarma, pepper soup and more. Delivered across Lagos in 35 minutes+. Order on WhatsApp now!" />
+  <meta name="keywords" content="BBQ Lagos, Nigerian food delivery, Sacred Cuisine Grills, BBQ fish Lagos, pepper soup Lagos, jollof rice delivery" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sacred Cuisine & Grills | BBQ & Local Food Delivery in Lagos" />
+  <meta property="og:description" content="The BBQ wey go make you forget your name. Delivering across Lagos in 35 minutes+." />
+  <meta property="og:image" content="images/hero_bg.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Sacred Cuisine & Grills",
+    "description": "BBQ and local Nigerian food restaurant delivering across Lagos.",
+    "url": "https://sacredcousin.com",
+    "telephone": "+2349164059883",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    },
+    "servesCuisine": ["Nigerian", "BBQ", "West African"],
+    "priceRange": "₦₦",
+    "openingHours": "Mo-Su 09:00-22:00",
+    "sameAs": [
+      "https://instagram.com/sacredcousingrill",
+      "https://facebook.com/sacredcousingrill"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ MOBILE NAV OVERLAY ============ -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeNav()"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="close-nav" onclick="closeNav()" aria-label="Close menu">✕</button>
+    <a href="#menu" onclick="closeNav()">Menu</a>
+    <a href="#delivery" onclick="closeNav()">Delivery</a>
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+    <a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..." class="btn btn-primary" style="margin-top:1rem;" target="_blank" rel="noopener">Order Now 🔥</a>
+  </nav>
+
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="logo" aria-label="Sacred Cuisine & Grills home">
+          <img src="images/logo.png" alt="Sacred Cuisine & Grills Logo" width="48" height="48" />
+          <div class="logo-text">Sacred Cuisine<br /><span>& Grills</span></div>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#delivery">Delivery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..." class="btn btn-primary nav-cta" target="_blank" rel="noopener" id="navOrderBtn">
+          Order Now 🔥
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="openNav()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" aria-labelledby="heroHeading">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Flame particles -->
+    <div class="flames" id="flames" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🔥</span> Now Delivering Across Lagos
+        </div>
+
+        <h1 class="hero-headline" id="heroHeading">
+          The BBQ Wey Go Make You<br />
+          <span class="fire">Forget Your Name</span>
+        </h1>
+
+        <p class="hero-sub">
+          Naija Flavor<span class="dot">•</span>Lagos Speed<span class="dot">•</span>Real Ingredients
+          <br />— Delivered in 35 Minutes+
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..." class="btn btn-primary" target="_blank" rel="noopener" id="heroOrderBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order on WhatsApp Now 🔥
+          </a>
+          <a href="#menu" class="btn btn-outline">See Full Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section id="stats" aria-label="Statistics">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-number" id="statCustomers">0+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <div class="stat-number">⭐ 4.9</div>
+          <div class="stat-label">Customer Rating</div>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <div class="stat-number">35 Min+</div>
+          <div class="stat-label">Delivery Time</div>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <div class="stat-number">Since 2020</div>
+          <div class="stat-label">Fresh Daily</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section id="menu" aria-labelledby="menuTitle">
+    <div class="container">
+      <h2 class="section-title" id="menuTitle">Our <span>Menu</span></h2>
+      <p class="section-subtitle">Real food. Real fire. Real flavour.</p>
+
+      <div class="filter-tabs" role="tablist" aria-label="Menu categories">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Items</button>
+        <button class="filter-btn" data-filter="bbq" role="tab" aria-selected="false">🔥 BBQ</button>
+        <button class="filter-btn" data-filter="soup" role="tab" aria-selected="false">🍲 Soups</button>
+        <button class="filter-btn" data-filter="rice" role="tab" aria-selected="false">🍚 Rice & More</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid" role="list">
+        <!-- Cards injected by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DELIVERY ============ -->
+  <section id="delivery" aria-labelledby="deliveryTitle">
+    <div class="container">
+      <div class="delivery-inner">
+        <div class="delivery-img fade-in">
+          <img src="images/bbq_fish.png" alt="BBQ Fish ready for delivery" loading="lazy" />
+        </div>
+        <div class="delivery-content fade-in">
+          <h2 id="deliveryTitle">We Dey <span style="color:var(--orange)">Deliver</span> For You</h2>
+          <p>We dey deliver to Lekki, Surulere, Ikeja, VI, Yaba, Ajah & more — 35 minutes or more depending on your location. Fresh from the grill to your door.</p>
+
+          <div class="delivery-zones" aria-label="Delivery areas">
+            <span class="zone-tag">📍 Lekki</span>
+            <span class="zone-tag">📍 Surulere</span>
+            <span class="zone-tag">📍 Ikeja</span>
+            <span class="zone-tag">📍 Victoria Island</span>
+            <span class="zone-tag">📍 Yaba</span>
+            <span class="zone-tag">📍 Ajah</span>
+            <span class="zone-tag">📍 & More</span>
+          </div>
+
+          <div class="delivery-features">
+            <div class="delivery-feature">
+              <div class="delivery-feature-icon">🔥</div>
+              <span>Hot & Fresh — straight from the grill</span>
+            </div>
+            <div class="delivery-feature">
+              <div class="delivery-feature-icon">⚡</div>
+              <span>35 minutes+ depending on your area</span>
+            </div>
+            <div class="delivery-feature">
+              <div class="delivery-feature-icon">💳</div>
+              <span>Pay on delivery or bank transfer</span>
+            </div>
+            <div class="delivery-feature">
+              <div class="delivery-feature-icon">📱</div>
+              <span>Order easily via WhatsApp — no app needed</span>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;">
+            <a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..." class="btn btn-primary" target="_blank" rel="noopener">
+              Order Now 🔥
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" aria-labelledby="aboutTitle">
+    <div class="container">
+      <div class="about-inner fade-in">
+        <span class="about-icon" aria-hidden="true">🔥</span>
+        <h2 class="section-title" id="aboutTitle">Our <span>Story</span></h2>
+        <p>
+          Sacred Cuisine & Grills started from a passion for real, smoky, Lagos-style BBQ.
+          No shortcuts. No frozen meat. Just fresh ingredients, open fire, and food that hits different.
+        </p>
+        <p>
+          From our signature BBQ fish to the rich, spicy pepper soups your mama used to make —
+          every dish is cooked with love, served with heat, and delivered fast to wherever you are in Lagos.
+          This na the real deal.
+        </p>
+
+        <div class="about-values" role="list">
+          <div class="value-card" role="listitem">
+            <div class="icon">🥩</div>
+            <h4>Fresh Daily</h4>
+          </div>
+          <div class="value-card" role="listitem">
+            <div class="icon">🔥</div>
+            <h4>Real Fire</h4>
+          </div>
+          <div class="value-card" role="listitem">
+            <div class="icon">❤️</div>
+            <h4>Made With Love</h4>
+          </div>
+          <div class="value-card" role="listitem">
+            <div class="icon">⚡</div>
+            <h4>Fast Delivery</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" aria-labelledby="contactTitle">
+    <div class="container">
+      <h2 class="section-title" id="contactTitle">Get In <span>Touch</span></h2>
+      <p class="section-subtitle">Place your order or ask us anything</p>
+
+      <div class="contact-grid">
+        <div class="contact-card fade-in">
+          <div class="contact-icon orange" aria-hidden="true">📞</div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+2349164059883">09164059883</a></p>
+          <p style="margin-top:4px;font-size:0.8rem;">Mon – Sun: 9am – 10pm</p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <div class="contact-icon green" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h3>WhatsApp Order</h3>
+          <p><a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..." target="_blank" rel="noopener">Chat with us</a></p>
+          <p style="margin-top:4px;font-size:0.8rem;">Fastest way to order</p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <div class="contact-icon red" aria-hidden="true">📍</div>
+          <h3>Location</h3>
+          <p>Lagos, Nigeria</p>
+          <p style="margin-top:4px;font-size:0.8rem;">Delivering citywide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="logo-text">Sacred Cuisine <span>& Grills</span></div>
+          <p class="footer-tagline">🔥 The BBQ Wey Hit Different</p>
+        </div>
+
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://instagram.com/sacredcousingrill" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+          <a href="https://facebook.com/sacredcousingrill" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+          <a href="https://tiktok.com/@sacredcousingrill" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">🎵</a>
+          <a href="https://twitter.com/sacredcousin" class="social-link" target="_blank" rel="noopener" aria-label="Twitter/X">🐦</a>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> <span>Sacred Cuisine & Grills</span>. All Rights Reserved. | Lagos, Nigeria 🇳🇬
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/2349164059883?text=Hello%20Sacred%20Cuisine%20%26%20Grills%2C%20I%27d%20like%20to%20place%20an%20order..."
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Order via WhatsApp"
+     id="waFloat">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">Order on WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
