@@ -1,12 +1,12 @@
 /* ============================================================
-   SACRED COUSIN & GRILLS — script.js
+   SACRED CUISINE & GRILLS — script.js
    ============================================================ */
 
 'use strict';
 
-const WA_NUMBER  = '2349164059883';
+const WA_NUMBER = '2349164059883';
 const WA_MESSAGE = encodeURIComponent("Hello Sacred Cuisine & Grills, I'd like to place an order...");
-const WA_LINK    = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 /* ============================================================
    MENU DATA
@@ -192,9 +192,9 @@ function renderMenu(filter) {
 }
 
 function orderItem(encodedName, encodedPrice) {
-  const name  = decodeURIComponent(encodedName);
+  const name = decodeURIComponent(encodedName);
   const price = decodeURIComponent(encodedPrice);
-  const msg   = encodeURIComponent(`Hello Sacred Cuisine & Grills, I'd like to order: ${name} (${price}). Please confirm availability and delivery details. Thank you!`);
+  const msg = encodeURIComponent(`Hello Sacred Cuisine & Grills, I'd like to order: ${name} (${price}). Please confirm availability and delivery details. Thank you!`);
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank', 'noopener');
 }
 
@@ -225,7 +225,7 @@ function createFlames() {
   if (!container) return;
 
   const colors = ['#FF6B00', '#C0392B', '#FF9500', '#ff4500', '#ffcc00'];
-  const count  = window.innerWidth < 600 ? 18 : 35;
+  const count = window.innerWidth < 600 ? 18 : 35;
 
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
