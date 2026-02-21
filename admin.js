@@ -6,7 +6,7 @@
 
 /* ---- Paste your same Supabase keys here ---- */
 const SUPABASE_URL = 'https://tynxzqwutxlgvutjsmqi.supabase.co';
-const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5bnh6cXd1dHhsZ3Z1dGpzbXFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2ODA1NTAsImV4cCI6MjA4NzI1NjU1MH0.n5cJbswcOzM67Q8FgDuiEe-DMYe7GJddc6kibmTdZX8';
 
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
