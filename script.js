@@ -8,9 +8,9 @@
 /* ============================================================
    SUPABASE CONFIG — paste your real keys here
    ============================================================ */
-const SUPABASE_URL  = 'YOUR_SUPABASE_URL';
+const SUPABASE_URL  = 'https://tynxzqwutxlgvutjsmqi.supabase.co';
 const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
-const _supabase = (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_URL')
+const _supabase = (typeof supabase !== 'undefined' && SUPABASE_URL !== 'https://tynxzqwutxlgvutjsmqi.supabase.co')
   ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON)
   : null;
 const WA_NUMBER = '2349164059883';
@@ -383,7 +383,7 @@ async function handleOrderSubmit(e) {
   }
 
   // Save to Supabase
-  if (_supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+  if (_supabase && SUPABASE_URL !== 'https://tynxzqwutxlgvutjsmqi.supabase.co') {
     await _supabase.from('orders').insert([{
       customer_name: name,
       phone,
@@ -435,7 +435,7 @@ function initOrderModal() {
    VISITOR TRACKING
    ============================================================ */
 async function logVisit() {
-  if (!_supabase || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+  if (!_supabase || SUPABASE_URL === 'https://tynxzqwutxlgvutjsmqi.supabase.co') return;
   const sessionKey = 'scg_session';
   let sessionId = sessionStorage.getItem(sessionKey);
   if (!sessionId) {

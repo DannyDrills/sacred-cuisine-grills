@@ -5,7 +5,7 @@
 'use strict';
 
 /* ---- Paste your same Supabase keys here ---- */
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+const SUPABASE_URL = 'https://tynxzqwutxlgvutjsmqi.supabase.co';
 const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
 
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);

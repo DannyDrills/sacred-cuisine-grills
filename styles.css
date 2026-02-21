@@ -1176,3 +1176,92 @@ img {
   .order-modal { padding: 2rem 1.2rem; }
   .form-row    { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   LOGO IMAGE
+   ============================================ */
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+#testimonials {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #161616 0%, var(--black) 100%);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,107,0,0.35);
+  box-shadow: 0 12px 35px rgba(255,107,0,0.12);
+}
+
+.testimonial-stars { font-size: 1rem; letter-spacing: 2px; }
+
+.testimonial-text {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.testimonial-name     { font-weight: 600; font-size: 0.9rem; color: var(--white); }
+.testimonial-location { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+
+@media (max-width: 600px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  #testimonials { padding: 60px 0; }
+}
